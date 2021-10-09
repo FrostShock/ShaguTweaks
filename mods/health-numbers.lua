@@ -44,6 +44,7 @@ module.enable = function(self)
 
     if not strfind(uf.manabar:GetName(), "Health") then
       local r, g, b = uf.manabar:GetStatusBarColor()
+--      string:SetTextColor(1, 1, 1, 1)
       string:SetTextColor((r + 2) / 3, (g + 2) / 3, (b + 2) / 3, 1)
     end
   end
@@ -75,6 +76,7 @@ module.enable = function(self)
       if cur == percent and strfind(sb:GetName(), "Health") then
         string:SetText(percent .. "%")
       elseif sb:GetName() == "TargetFrameHealthBar" and cur < max then
+--        string:SetText(Abbreviate(cur))
         string:SetText(Abbreviate(cur) .. " - " .. percent .. "%")
       else
         string:SetText(Abbreviate(cur))
@@ -82,6 +84,7 @@ module.enable = function(self)
 
       if strfind(sb:GetName(), "Health") then
         local r, g, b = GetColorGradient(percent/100)
+--        string:SetTextColor(1, 1, 1, 1)
         string:SetTextColor((r + 1) / 2, (g + 1) / 2, (b + 1) / 2, .75)
       end
 
